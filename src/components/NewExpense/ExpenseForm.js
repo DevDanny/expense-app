@@ -26,6 +26,17 @@ function ExpenseForm(props) {
         setEnteredAmount('');
         setEnteredDate('');
     }
+    // const toggleForm  = (event) => {
+    //     event.preventDefault();
+    //     if(shouldRenderForm) {
+    //         setRenderForm(false);
+    //         return
+    //     }
+    //     if(!shouldRenderForm) {
+    //         setRenderForm(true);
+    //         return
+    //     }
+    // }
     
     const submitHandler = (event) => {
         event.preventDefault();
@@ -38,6 +49,14 @@ function ExpenseForm(props) {
         
         clearInputs();
     }
+
+    // if(!shouldRenderForm){
+    //     return(        
+    //         <div className="new-expense__actions">
+    //             <button onClick={toggleForm}>Add Expense</button>
+    //         </div>
+    //     )
+    // }
 
     return (
         <form onSubmit={submitHandler}>
@@ -56,6 +75,7 @@ function ExpenseForm(props) {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type="button" onClick={props.onCancle}>Cancle</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
