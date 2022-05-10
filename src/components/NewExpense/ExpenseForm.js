@@ -5,38 +5,27 @@ function ExpenseForm(props) {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
-
+    
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
         console.log(event.target.value)
     };
-
+    
     const amountChangeHandler = (event) => {
         setEnteredAmount(event.target.value)
         console.log(event.target.value)
     }
-
+    
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value)
         console.log(event.target.value)
     }
-
+    
     const clearInputs = () => {
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
     }
-    // const toggleForm  = (event) => {
-    //     event.preventDefault();
-    //     if(shouldRenderForm) {
-    //         setRenderForm(false);
-    //         return
-    //     }
-    //     if(!shouldRenderForm) {
-    //         setRenderForm(true);
-    //         return
-    //     }
-    // }
     
     const submitHandler = (event) => {
         event.preventDefault();
@@ -49,15 +38,7 @@ function ExpenseForm(props) {
         
         clearInputs();
     }
-
-    // if(!shouldRenderForm){
-    //     return(        
-    //         <div className="new-expense__actions">
-    //             <button onClick={toggleForm}>Add Expense</button>
-    //         </div>
-    //     )
-    // }
-
+    
     return (
         <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
